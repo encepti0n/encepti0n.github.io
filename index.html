@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name</title>
+  <meta name="description" content="Personal site and blog of Your Name.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Your Name</a>
+      <nav class="nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">About</a>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <h1>Hi, I'm Your Name.</h1>
+      <p class="lead">
+        One line about what you do and what you care about. Replace this with
+        something specific — it is the first thing anyone reads.
+      </p>
+      <div class="links">
+        <a href="https://github.com/yourusername">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+        <a href="mailto:baraalamri@gmail.com">Email</a>
+      </div>
+    </section>
+
+    <h2>Selected work</h2>
+    <div class="cards">
+
+      <div class="card">
+        <h3><a href="projects.html">Project one</a></h3>
+        <p>What it does and why you built it, in one or two sentences.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="projects.html">Project two</a></h3>
+        <p>What it does and why you built it, in one or two sentences.</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">API</span></div>
+      </div>
+
+    </div>
+
+    <h2>Latest writing</h2>
+    <ul class="post-list" id="recent-posts"></ul>
+    <p style="margin-top:20px"><a href="blog/index.html">All posts →</a></p>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Your Name</span>
+      <span><a href="https://github.com/yourusername">github.com/yourusername</a></span>
+    </div>
+  </footer>
+
+  <script src="js/posts.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    renderPosts("recent-posts", "blog/posts/", 3, false);
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

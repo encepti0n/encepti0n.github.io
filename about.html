@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Your Name</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Your Name</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html" class="active">About</a>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article>
+      <h1>About</h1>
+
+      <p>
+        A paragraph about who you are, what you are working on now, and what you
+        want to be doing next. Write it the way you would say it out loud.
+      </p>
+
+      <p>
+        A second paragraph about background — where you study or work, how you got
+        into this, and anything you would want a stranger reading this to know.
+      </p>
+
+      <h2>What I work with</h2>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Java</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Git</span>
+      </div>
+
+      <h2>Get in touch</h2>
+      <p>The fastest way to reach me is email.</p>
+      <div class="links">
+        <a href="mailto:baraalamri@gmail.com">Email</a>
+        <a href="https://github.com/yourusername">GitHub</a>
+        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Your Name</span>
+      <span><a href="https://github.com/yourusername">github.com/yourusername</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

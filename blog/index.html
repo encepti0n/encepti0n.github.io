@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Your Name</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Your Name</a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="index.html" class="active">Blog</a>
+        <a href="../about.html">About</a>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Blog</h1>
+    <p class="lead">Notes on what I am building and learning.</p>
+
+    <ul class="post-list" id="all-posts"></ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Your Name</span>
+      <span><a href="../index.html">Home</a></span>
+    </div>
+  </footer>
+
+  <script src="../js/posts.js"></script>
+  <script src="../js/main.js"></script>
+  <script>
+    renderPosts("all-posts", "posts/", null, true);
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

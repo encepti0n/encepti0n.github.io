@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 1. Change the title here -->
+  <title>Hello world — Your Name</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html">Your Name</a>
+      <nav class="nav">
+        <a href="../../index.html">Home</a>
+        <a href="../../projects.html">Projects</a>
+        <a href="../index.html" class="active">Blog</a>
+        <a href="../../about.html">About</a>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <a class="back" href="../index.html">← All posts</a>
+
+    <article>
+      <!-- 2. Change the heading and date -->
+      <h1>Hello world — why I built this site</h1>
+      <p class="post-meta">September 8, 2026</p>
+
+      <!-- 3. Write the post below. Plain paragraphs are enough. -->
+      <p>
+        This is the first post on my site. I built the whole thing from plain
+        HTML, CSS and a small amount of JavaScript — no framework, no build step,
+        nothing to install. Every page here is a file I can open and read.
+      </p>
+
+      <p>
+        That was deliberate. Static sites are the one corner of the web that still
+        works the same way it did fifteen years ago: a folder of files, served
+        as-is. When something looks wrong, the answer is somewhere in a file I
+        wrote, not in a dependency tree.
+      </p>
+
+      <h2>How a post gets published</h2>
+
+      <p>Adding a post takes three steps:</p>
+
+      <ol>
+        <li>Copy this file and rename it.</li>
+        <li>Add an entry at the top of <code>js/posts.js</code>.</li>
+        <li>Commit and push.</li>
+      </ol>
+
+      <p>
+        GitHub Pages rebuilds within about a minute. Here is what pushing looks
+        like from the terminal:
+      </p>
+
+      <pre><code>git add .
+git commit -m "New post: hello world"
+git push</code></pre>
+
+      <blockquote>
+        The best time to start writing was when you built the site. The second
+        best time is now.
+      </blockquote>
+
+      <p>
+        More soon.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Your Name</span>
+      <span><a href="../index.html">All posts</a></span>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

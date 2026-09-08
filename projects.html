@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Your Name</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Your Name</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="blog/index.html">Blog</a>
+        <a href="about.html">About</a>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Projects</h1>
+    <p class="lead">Things I have built. Copy a card below to add another.</p>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3><a href="https://github.com/yourusername/project-one">Project one</a></h3>
+        <p>
+          Two or three sentences: the problem, what you built, and one interesting
+          detail about how it works. Link the title to the repo or the live demo.
+        </p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/yourusername/project-two">Project two</a></h3>
+        <p>
+          Two or three sentences: the problem, what you built, and one interesting
+          detail about how it works.
+        </p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">API</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/yourusername/project-three">Project three</a></h3>
+        <p>Two or three sentences about this one.</p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Your Name</span>
+      <span><a href="https://github.com/yourusername">github.com/yourusername</a></span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
