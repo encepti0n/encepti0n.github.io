@@ -3,35 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Blog — Albaraa A.</title>
+  <meta name="description" content="Notes from Albaraa A. on what he is building and learning.">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog — Albaraa A.">
+  <meta property="og:description" content="Notes on what I am building and learning.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../css/style.css">
+
+  <script>
+    (function () {
+      var r = document.documentElement;
+      r.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") r.setAttribute("data-theme", t);
+      } catch (e) { /* private mode */ }
+    })();
+  </script>
 </head>
 <body>
+
+  <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="../index.html">Albaraa A.</a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="../index.html">Home</a>
         <a href="../projects.html">Projects</a>
-        <a href="index.html" class="active">Blog</a>
+        <a href="index.html" class="active" aria-current="page">Blog</a>
         <a href="../about.html">About</a>
       </nav>
-      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">
+        <span class="swatch" aria-hidden="true"></span><span class="label">light</span>
+      </button>
     </div>
   </header>
 
-  <main class="wrap">
-    <h1>Blog</h1>
-    <p class="lead">Notes on what I am building and learning.</p>
+  <main id="main" class="wrap">
 
-    <ul class="post-list" id="all-posts"></ul>
+    <div class="reveal">
+      <p class="eyebrow">Writing</p>
+      <h1>Notes</h1>
+      <p class="lead">
+        What I am building and learning, written down while it is still fresh.
+      </p>
+    </div>
+
+    <ul class="post-list reveal" id="all-posts"></ul>
+
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Albaraa A.</span>
-      <span><a href="../index.html">Home</a></span>
+      <span class="colophon">&copy; <span data-year>2026</span> Albaraa A. — built by hand</span>
+      <nav aria-label="Footer">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../about.html">About</a>
+      </nav>
     </div>
   </footer>
 
@@ -39,7 +77,7 @@
   <script src="../js/main.js"></script>
   <script>
     renderPosts("all-posts", "posts/", null, true);
-    document.getElementById("year").textContent = new Date().getFullYear();
+    revealOnScroll();
   </script>
 </body>
 </html>

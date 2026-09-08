@@ -3,14 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Not found — Albaraa A.</title>
+
+  <title>Page not found — Albaraa A.</title>
+  <meta name="description" content="That page does not exist.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
+
+  <script>
+    (function () {
+      var r = document.documentElement;
+      r.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") r.setAttribute("data-theme", t);
+      } catch (e) { /* private mode */ }
+    })();
+  </script>
 </head>
 <body>
-  <main class="wrap" style="padding-top:120px">
-    <h1>404</h1>
-    <p class="lead">That page does not exist.</p>
-    <div class="links"><a href="/">Go home</a></div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">Albaraa A.</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/blog/index.html">Blog</a>
+        <a href="/about.html">About</a>
+      </nav>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">
+        <span class="swatch" aria-hidden="true"></span><span class="label">light</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="notfound">
+      <p class="eyebrow">Error 404</p>
+      <p class="code">Not&nbsp;here.</p>
+      <p class="lead">
+        The page you asked for does not exist, or it moved. Nothing is broken —
+        the link just points somewhere I never built.
+      </p>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/blog/index.html">Blog</a>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="colophon">&copy; <span data-year>2026</span> Albaraa A. — built by hand</span>
+      <nav aria-label="Footer">
+        <a href="mailto:baraalamri@gmail.com">Report a broken link</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
 </body>
 </html>

@@ -3,29 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Albaraa A.</title>
-  <meta name="description" content="Personal site and blog of Albaraa A.">
+
+  <title>Albaraa A. — portfolio and notes</title>
+  <meta name="description" content="Personal site of Albaraa A. — selected projects and writing about building things on the web.">
+  <meta name="author" content="Albaraa A.">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Albaraa A. — portfolio and notes">
+  <meta property="og:description" content="Selected projects and writing about building things on the web.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    /* Set the theme before first paint so dark mode never flashes. */
+    (function () {
+      var r = document.documentElement;
+      r.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") r.setAttribute("data-theme", t);
+      } catch (e) { /* private mode */ }
+    })();
+  </script>
 </head>
 <body>
+
+  <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">Albaraa A.</a>
-      <nav class="nav">
-        <a href="index.html" class="active">Home</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="active" aria-current="page">Home</a>
         <a href="projects.html">Projects</a>
         <a href="blog/index.html">Blog</a>
         <a href="about.html">About</a>
       </nav>
-      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">
+        <span class="swatch" aria-hidden="true"></span><span class="label">light</span>
+      </button>
     </div>
   </header>
 
-  <main class="wrap">
+  <main id="main" class="wrap">
 
-    <section class="hero">
-      <h1>Hi, I'm Albaraa.</h1>
+    <section class="hero reveal">
+      <p class="eyebrow">Portfolio &amp; notes</p>
+      <h1>Hi, I'm <em>Albaraa</em>.</h1>
       <p class="lead">
         One line about what you do and what you care about. Replace this with
         something specific — it is the first thing anyone reads.
@@ -37,33 +66,59 @@
       </div>
     </section>
 
-    <h2>Selected work</h2>
-    <div class="cards">
+    <section class="section reveal" aria-labelledby="work-heading">
+      <p class="eyebrow" id="work-heading">Selected work</p>
 
-      <div class="card">
-        <h3><a href="projects.html">Project one</a></h3>
-        <p>What it does and why you built it, in one or two sentences.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span></div>
-      </div>
+      <ul class="index">
+        <li>
+          <a class="row" href="projects.html">
+            <span class="num">01</span>
+            <span>
+              <h3>Project one</h3>
+              <p>What it does and why you built it, in one or two sentences.</p>
+              <span class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">SQLite</span>
+              </span>
+            </span>
+            <span class="arrow" aria-hidden="true">&#8594;</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="projects.html">
+            <span class="num">02</span>
+            <span>
+              <h3>Project two</h3>
+              <p>What it does and why you built it, in one or two sentences.</p>
+              <span class="tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">API</span>
+              </span>
+            </span>
+            <span class="arrow" aria-hidden="true">&#8594;</span>
+          </a>
+        </li>
+      </ul>
 
-      <div class="card">
-        <h3><a href="projects.html">Project two</a></h3>
-        <p>What it does and why you built it, in one or two sentences.</p>
-        <div class="tags"><span class="tag">JavaScript</span><span class="tag">API</span></div>
-      </div>
+      <a class="more" href="projects.html">All projects <span aria-hidden="true">&#8594;</span></a>
+    </section>
 
-    </div>
-
-    <h2>Latest writing</h2>
-    <ul class="post-list" id="recent-posts"></ul>
-    <p style="margin-top:20px"><a href="blog/index.html">All posts →</a></p>
+    <section class="section reveal" aria-labelledby="writing-heading">
+      <p class="eyebrow" id="writing-heading">Latest writing</p>
+      <ul class="post-list" id="recent-posts"></ul>
+      <a class="more" href="blog/index.html">All posts <span aria-hidden="true">&#8594;</span></a>
+    </section>
 
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Albaraa A.</span>
-      <span><a href="https://github.com/encepti0n">github.com/encepti0n</a></span>
+      <span class="colophon">&copy; <span data-year>2026</span> Albaraa A. — built by hand</span>
+      <nav aria-label="Footer">
+        <a href="https://github.com/encepti0n">GitHub</a>
+        <a href="mailto:baraalamri@gmail.com">Email</a>
+        <a href="#main">Top</a>
+      </nav>
     </div>
   </footer>
 
@@ -71,7 +126,7 @@
   <script src="js/main.js"></script>
   <script>
     renderPosts("recent-posts", "blog/posts/", 3, false);
-    document.getElementById("year").textContent = new Date().getFullYear();
+    revealOnScroll();
   </script>
 </body>
 </html>

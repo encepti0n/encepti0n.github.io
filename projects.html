@@ -3,65 +3,139 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>Projects — Albaraa A.</title>
+  <meta name="description" content="Things Albaraa A. has built, with the problem each one solves and how it works.">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects — Albaraa A.">
+  <meta property="og:description" content="Things Albaraa A. has built.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    (function () {
+      var r = document.documentElement;
+      r.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") r.setAttribute("data-theme", t);
+      } catch (e) { /* private mode */ }
+    })();
+  </script>
 </head>
 <body>
+
+  <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">Albaraa A.</a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a href="projects.html" class="active">Projects</a>
+        <a href="projects.html" class="active" aria-current="page">Projects</a>
         <a href="blog/index.html">Blog</a>
         <a href="about.html">About</a>
       </nav>
-      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">
+        <span class="swatch" aria-hidden="true"></span><span class="label">light</span>
+      </button>
     </div>
   </header>
 
-  <main class="wrap">
-    <h1>Projects</h1>
-    <p class="lead">Things I have built. Copy a card below to add another.</p>
+  <main id="main" class="wrap">
 
-    <div class="cards">
-
-      <div class="card">
-        <h3><a href="https://github.com/encepti0n/project-one">Project one</a></h3>
-        <p>
-          Two or three sentences: the problem, what you built, and one interesting
-          detail about how it works. Link the title to the repo or the live demo.
-        </p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">SQLite</span></div>
-      </div>
-
-      <div class="card">
-        <h3><a href="https://github.com/encepti0n/project-two">Project two</a></h3>
-        <p>
-          Two or three sentences: the problem, what you built, and one interesting
-          detail about how it works.
-        </p>
-        <div class="tags"><span class="tag">JavaScript</span><span class="tag">API</span></div>
-      </div>
-
-      <div class="card">
-        <h3><a href="https://github.com/encepti0n/project-three">Project three</a></h3>
-        <p>Two or three sentences about this one.</p>
-        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span></div>
-      </div>
-
+    <div class="reveal">
+      <p class="eyebrow">Work</p>
+      <h1>Projects</h1>
+      <p class="lead">
+        Things I have built, newest first. Copy a row below to add another.
+      </p>
     </div>
+
+    <ul class="index reveal">
+
+      <li>
+        <a class="row" href="https://github.com/encepti0n/project-one">
+          <span class="num">01</span>
+          <span>
+            <h3>Project one</h3>
+            <p>
+              Two or three sentences: the problem, what you built, and one
+              interesting detail about how it works. Link the row to the repo
+              or the live demo.
+            </p>
+            <span class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQLite</span>
+            </span>
+          </span>
+          <span class="arrow" aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="row" href="https://github.com/encepti0n/project-two">
+          <span class="num">02</span>
+          <span>
+            <h3>Project two</h3>
+            <p>
+              Two or three sentences: the problem, what you built, and one
+              interesting detail about how it works.
+            </p>
+            <span class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">API</span>
+            </span>
+          </span>
+          <span class="arrow" aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+
+      <li>
+        <a class="row" href="https://github.com/encepti0n/project-three">
+          <span class="num">03</span>
+          <span>
+            <h3>Project three</h3>
+            <p>Two or three sentences about this one.</p>
+            <span class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+            </span>
+          </span>
+          <span class="arrow" aria-hidden="true">&#8599;</span>
+        </a>
+      </li>
+
+    </ul>
+
+    <div class="section reveal">
+      <p class="eyebrow">Next</p>
+      <p>
+        Working on something you would want to see here? The fastest way to
+        reach me is <a href="mailto:baraalamri@gmail.com">email</a>.
+      </p>
+    </div>
+
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Albaraa A.</span>
-      <span><a href="https://github.com/encepti0n">github.com/encepti0n</a></span>
+      <span class="colophon">&copy; <span data-year>2026</span> Albaraa A. — built by hand</span>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/encepti0n">GitHub</a>
+        <a href="mailto:baraalamri@gmail.com">Email</a>
+      </nav>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script>revealOnScroll();</script>
 </body>
 </html>

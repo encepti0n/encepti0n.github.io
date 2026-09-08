@@ -3,32 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- 1. Change the title here -->
+
+  <!-- 1. Change the title and description here -->
   <title>Hello world — Albaraa A.</title>
+  <meta name="description" content="A first post about starting a site from scratch with nothing but HTML, CSS and a little JavaScript.">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14120f" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hello world — why I built this site">
+  <meta property="og:description" content="Starting a site from scratch with nothing but HTML, CSS and a little JavaScript.">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../../css/style.css">
+
+  <script>
+    (function () {
+      var r = document.documentElement;
+      r.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") r.setAttribute("data-theme", t);
+      } catch (e) { /* private mode */ }
+    })();
+  </script>
 </head>
 <body>
+
+  <a class="skip" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="../../index.html">Albaraa A.</a>
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary">
         <a href="../../index.html">Home</a>
         <a href="../../projects.html">Projects</a>
-        <a href="../index.html" class="active">Blog</a>
+        <a href="../index.html" class="active" aria-current="page">Blog</a>
         <a href="../../about.html">About</a>
       </nav>
-      <button id="theme-toggle" type="button" aria-label="Toggle theme">☾</button>
+      <button id="theme-toggle" type="button" aria-label="Switch theme">
+        <span class="swatch" aria-hidden="true"></span><span class="label">light</span>
+      </button>
     </div>
   </header>
 
-  <main class="wrap">
-    <a class="back" href="../index.html">← All posts</a>
+  <main id="main" class="wrap">
+
+    <a class="back" href="../index.html"><span aria-hidden="true">&#8592;</span> All posts</a>
 
     <article>
       <!-- 2. Change the heading and date -->
-      <h1>Hello world — why I built this site</h1>
-      <p class="post-meta">September 8, 2026</p>
+      <header class="article-head">
+        <h1>Hello world — why I built this site</h1>
+        <p class="post-meta"><time datetime="2026-09-08">September 8, 2026</time> &middot; 2 min read</p>
+      </header>
 
       <!-- 3. Write the post below. Plain paragraphs are enough. -->
       <p>
@@ -72,16 +102,22 @@ git push</code></pre>
         More soon.
       </p>
     </article>
+
+    <p><a class="more" href="../index.html">Read the other posts <span aria-hidden="true">&#8594;</span></a></p>
+
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© <span id="year">2026</span> Albaraa A.</span>
-      <span><a href="../index.html">All posts</a></span>
+      <span class="colophon">&copy; <span data-year>2026</span> Albaraa A. — built by hand</span>
+      <nav aria-label="Footer">
+        <a href="../index.html">All posts</a>
+        <a href="../../index.html">Home</a>
+        <a href="mailto:baraalamri@gmail.com">Email</a>
+      </nav>
     </div>
   </footer>
 
   <script src="../../js/main.js"></script>
-  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
